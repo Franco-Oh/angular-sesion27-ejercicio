@@ -2,11 +2,11 @@
     <div class="row py-5 m-0 bg-black bg-gradient">
       <div class="mb-3 p-0">
         <label for="num1" class="text-white mb-2">Primer Número:</label>
-        <input type="number" class="form-control w-25 mx-auto text-center" id="num1" [(ngModel)]="numPantalla1"> 
+        <input type="number" class="form-control w-25 mx-auto text-center" id="num1" [(ngModel)]="num1"> 
       </div>
       <div class="mb-4 p-0">
         <label for="num2" class="text-white mb-2">Segundo Número:</label>
-        <input type="number" class="form-control w-25 mx-auto text-center" id="num2" [(ngModel)]="numPantalla2">
+        <input type="number" class="form-control w-25 mx-auto text-center" id="num2" [(ngModel)]="num2">
       </div>
 
       <div class="mb-3 p-0">
@@ -26,11 +26,11 @@
           <option value="*">Multiplicar</option>
           <option value="/">Dividir</option>
         </select>
-        <p *ngIf="msg" class="text-danger">Selecciona una operacion aritmetica</p>
+        <p *ngIf="msg" class="text-danger pt-2 m-0">Selecciona una operacion aritmetica</p>
       </div>
       <div class="mt-3 p-0">
           <!-- <button class="mt-3 btn btn-warning" (click)="calcular()">Calcular</button> -->
-          <button class="mt-3 btn btn-warning" (click)="calcular2()">Calcular</button>
+          <button class="mt-3 btn btn-warning" (click)="calcular2(num1,num2,operacion2)">Calcular</button>
       </div>
     </div>
 

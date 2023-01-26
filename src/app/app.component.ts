@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  numPantalla1!:number;
-  numPantalla2!:number;
+  num1 = 0;
+  num2 = 0;
   
   operacion:any;
 
@@ -20,26 +20,26 @@ export class AppComponent {
 
   reseteado(){
     this.resultado = 0;
-    this.numPantalla1 = 0;
-    this.numPantalla2 = 0;
+    this.num1 = 0;
+    this.num2 = 0;
   }
 
   // Esta fue la opcion 1 para calcular
   calcular(){
     if (this.operacion == 'sumar') {
-      this.resultado = this.numPantalla1 + this.numPantalla2;
+      this.resultado = this.num1 + this.num2;
       console.log(this.resultado);
       this.msg = false;
     } else if (this.operacion == 'restar') {
-      this.resultado = this.numPantalla1 - this.numPantalla2;
+      this.resultado = this.num1 - this.num2;
       console.log(this.resultado);
       this.msg = false;
     } else if (this.operacion == 'multiplicar') {
-      this.resultado = this.numPantalla1 * this.numPantalla2;
+      this.resultado = this.num1 * this.num2;
       console.log(this.resultado);
       this.msg = false;
     } else if (this.operacion == 'dividir') {
-      this.resultado = this.numPantalla1 / this.numPantalla2;
+      this.resultado = this.num1 / this.num2;
       console.log(this.resultado);
       this.msg = false;
     } else {
@@ -49,12 +49,12 @@ export class AppComponent {
   }
 
   //Opcion con menos codigo
-  calcular2(){
-    this.resultado = eval(this.numPantalla1 + this.operacion2 + this.numPantalla2);
-    if (!this.resultado) {
+  calcular2(num1:number, num2:number, oper:string){
+    if (!oper) {
       this.msg = true;
     } else {
       this.msg = false;
     }
+    return this.resultado = eval(num1 + oper + num2);
   }
 }
